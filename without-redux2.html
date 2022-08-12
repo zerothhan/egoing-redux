@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <style>
+      .container,
+      .container2 {
+        border: 5px solid black;
+        padding: 10px;
+      }
+    </style>
+    <div id="red">
+      <div class="container" id="component_red">
+        <h1>red</h1>
+        <input type="button" class="_btn" value="fire" />
+      </div>
+    </div>
+    <div id="green">
+      <div class="container" id="component_green">
+        <h1>green</h1>
+        <input type="button" class="_btn" value="fire" />
+      </div>
+    </div>
+    <div id="blue">
+      <div class="container2" id="component_blue">
+        <h1>blue</h1>
+        <input type="button" class="_btn2" value="fire" />
+      </div>
+    </div>
+    <div id="black">
+      <div class="container2" id="component_black">
+        <h1>blue</h1>
+        <input type="button" class="_btn2" value="fire" />
+      </div>
+    </div>
+    <script>
+      $("._btn").on("click", function() {
+        let this_color = $(this).parent().parent().attr("id");
+        $(".container").css("background-color", this_color);
+      });
+
+      $("._btn2").on("click", function() {
+        let this_color = $(this).parent().parent().attr("id");
+        $(".container2").css("background-color", this_color);
+      });
+    </script>
+  </body>
+</html>
